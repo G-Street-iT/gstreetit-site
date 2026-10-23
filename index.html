@@ -1,0 +1,1044 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>G Street iT | Small Business &amp; Personal IT Support in Fort Wayne &amp; Chicagoland</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="G Street iT: managed IT, networking, cybersecurity and computer repair for small businesses and homes in Avilla, Auburn, Fort Wayne and Chicagoland. Remote support from the USA, never outsourced.">
+<link rel="canonical" href="https://gstreetit.com/">
+<meta property="og:type" content="website"><meta property="og:url" content="https://gstreetit.com/">
+<meta property="og:title" content="G Street iT | We're looking for trouble">
+<meta property="og:description" content="Small business and personal IT solutions from real people in Avilla, IN. Serving Fort Wayne and Chicagoland. Remote support never outsourced.">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#08090b">
+<link rel="icon" href="assets/gstreet-seal.webp">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","additionalType":"https://en.wikipedia.org/wiki/Managed_services","name":"G Street iT","alternateName":"G Street iT Solutions","slogan":"We're looking for trouble!","url":"https://gstreetit.com/","logo":"https://gstreetit.com/assets/gstreet-seal.webp","description":"Managed IT, networking, cybersecurity and computer repair for small businesses and homes. Remote support from the USA, never outsourced.","address":{"@type":"PostalAddress","streetAddress":"142 S Main St","addressLocality":"Avilla","addressRegion":"IN","postalCode":"46710","addressCountry":"US"},"areaServed":[{"@type":"City","name":"Avilla, IN"},{"@type":"City","name":"Auburn, IN"},{"@type":"City","name":"Kendallville, IN"},{"@type":"City","name":"Fort Wayne, IN"},{"@type":"Place","name":"Chicagoland"}],"parentOrganization":{"@type":"Organization","name":"G Street Portal","url":"https://www.gstreetportal.com/"},"knowsAbout":["Managed IT services","Network installation","Cybersecurity","Computer repair","Microsoft 365","Data backup"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Oswald:wght@400;500;600&family=Unbounded:wght@500;600;700;800&display=swap">
+<style>
+/* Layout: the G Street family's dark stage (same type system as gstreetdjs.com) re-tuned for IT.
+   Hero = copy left, live "Trouble Patrol" street map right. Orange = actions; teal = healthy; red = trouble. */
+:root{
+  --stage:#08090b;          /* near-black with a cool bias */
+  --deck:#101216;           /* raised surfaces */
+  --deck-2:#171a1f;
+  --line:#252a31;
+  --ink:#f3f5f7;
+  --ink-2:#aab2bc;
+  --ink-3:#737c87;
+  --orange:#e67300;         /* G Street orange: buttons, the tech, the road */
+  --orange-hi:#ff8a1f;
+  --orange-ink:#140a00;
+  --ok:#3ddc97;             /* healthy / fixed */
+  --data:#5cc8ff;           /* network traffic */
+  --bad:#ff5d4d;            /* trouble */
+  --f-display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --f-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-label:"Oswald","Arial Narrow",Arial,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Consolas,monospace;
+  --rail:1200px;
+  --r:14px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--stage);color:var(--ink);font:16px/1.6 var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--stage)}
+img{max-width:100%;display:block}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--orange-hi);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;line-height:1.05;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(1.9rem,4.4vw,3.1rem)}
+h3{font-size:1.1rem;line-height:1.25}
+p{margin:0}
+.wrap{max-width:var(--rail);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band{padding-block:clamp(64px,9vw,112px)}
+.band.alt{background:#0b0d10}
+.label{font-family:var(--f-label);text-transform:uppercase;letter-spacing:.16em;font-size:.8rem;color:var(--orange);font-weight:500}
+.lede{color:var(--ink-2);font-size:1.08rem;max-width:60ch}
+.sec-head{display:grid;gap:14px;margin-bottom:clamp(32px,5vw,56px)}
+.sec-head.split{grid-template-columns:1fr auto;align-items:end;gap:14px 32px}
+@media (max-width:760px){.sec-head.split{grid-template-columns:1fr}}
+.mono{font-family:var(--f-mono)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;border:1px solid transparent;font-family:var(--f-label);font-size:1rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s,border-color .2s,color .2s;white-space:nowrap;background:none}
+.btn-hot{background:var(--orange);color:var(--orange-ink);font-weight:600}
+.btn-hot:hover{background:var(--orange-hi);transform:translateY(-2px);box-shadow:0 10px 30px -8px rgba(255,138,31,.6)}
+.btn-ghost{border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--orange);color:var(--orange-hi);transform:translateY(-2px)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn.busy{opacity:.6;pointer-events:none}
+
+/* Portal bar (shared across G Street sites) */
+.portal-bar{background:#040506;border-bottom:1px solid var(--line);font-family:var(--f-label);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem}
+.portal-bar .wrap{display:flex;align-items:center;justify-content:flex-end;min-height:36px}
+.portal-bar nav{display:flex;align-items:center;gap:18px}
+.portal-bar a{color:var(--ink-3);text-decoration:none;white-space:nowrap;transition:color .2s}
+.portal-bar a:hover{color:var(--orange-hi)}
+.portal-bar .pb-home{display:inline-flex;opacity:.85;transition:opacity .2s,transform .3s}
+.portal-bar .pb-home:hover{opacity:1;transform:rotate(-20deg)}
+.portal-bar .pb-home img{width:20px;height:20px}
+.portal-bar nav a[aria-current]{color:var(--orange)}
+@media (max-width:640px){.portal-bar .wrap{justify-content:center}.portal-bar{letter-spacing:.04em;font-size:.66rem}.portal-bar nav{gap:10px}}
+
+/* Nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(8,9,11,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.scrolled{border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto}
+.brand img{width:40px;height:40px;object-fit:contain;transition:transform .6s}
+.brand:hover img{transform:rotate(-30deg)}
+.brand b{font-family:var(--f-display);font-size:1rem;letter-spacing:.02em}
+.brand b i{font-style:normal;color:var(--orange)}
+.brand small{display:block;white-space:nowrap;font-family:var(--f-label);font-size:.7rem;letter-spacing:.18em;color:var(--ink-3);text-transform:uppercase}
+.nav-links{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.nav-links a{display:block;white-space:nowrap;padding:8px 12px;text-decoration:none;font-family:var(--f-label);text-transform:uppercase;letter-spacing:.1em;font-size:.86rem;color:var(--ink-2);border-radius:8px;transition:color .2s}
+.nav-links a:hover{color:var(--orange-hi)}
+.nav .btn{min-height:42px;padding:0 18px;font-size:.88rem}
+.menu-btn{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:none;cursor:pointer;position:relative}
+.menu-btn span,.menu-btn span::before,.menu-btn span::after{position:absolute;left:12px;right:12px;height:2px;background:var(--ink);content:"";transition:transform .25s,background .25s}
+.menu-btn span{top:21px}.menu-btn span::before{top:-6px;left:0;right:0}.menu-btn span::after{top:6px;left:0;right:0}
+.nav.open .menu-btn span{background:transparent}
+.nav.open .menu-btn span::before{top:0;transform:rotate(45deg)}
+.nav.open .menu-btn span::after{top:0;transform:rotate(-45deg)}
+@media (max-width:980px){
+  .menu-btn{display:block}
+  .nav .nav-cta{display:none}
+  .nav-links{position:absolute;top:72px;left:0;right:0;flex-direction:column;background:var(--stage);border-bottom:1px solid var(--line);padding:8px max(16px,env(safe-area-inset-left,0px)) 16px;display:none}
+  .nav.open .nav-links{display:flex}
+  .nav-links a{padding:14px 8px;font-size:1rem}
+}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;padding-block:clamp(40px,6vw,80px) clamp(48px,7vw,96px)}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(600px 400px at 78% 40%,rgba(230,115,0,.13),transparent 70%),
+  radial-gradient(500px 360px at 10% 90%,rgba(92,200,255,.07),transparent 70%);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.02fr 1fr;gap:clamp(28px,4vw,56px);align-items:center}
+@media (max-width:980px){.hero-grid{grid-template-columns:1fr}}
+.hero-copy{display:grid;gap:22px;min-width:0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;width:fit-content;padding:6px 14px 6px 10px;border:1px solid var(--line);border-radius:999px;font-family:var(--f-label);text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;color:var(--ink-2);background:rgba(16,18,22,.7)}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(61,220,151,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(61,220,151,0)}100%{box-shadow:0 0 0 0 rgba(61,220,151,0)}}
+.hero h1{font-size:clamp(2.5rem,6.4vw,5.1rem);font-weight:800;letter-spacing:-.025em;line-height:.98}
+.hero h1 .trouble{color:var(--orange);position:relative;display:inline-block}
+.hero h1 .trouble::after{content:"";position:absolute;left:2%;right:2%;bottom:-.08em;height:.09em;background:repeating-linear-gradient(90deg,var(--orange) 0 .38em,transparent .38em .62em);opacity:.9;animation:road 1.6s linear infinite}
+@keyframes road{to{background-position:.62em 0}}
+.hero .lede{font-size:clamp(1.05rem,1.6vw,1.2rem)}
+.hero .lede b{color:var(--ink);font-weight:600}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:10px 22px;padding-top:6px;color:var(--ink-3);font-size:.92rem}
+.hero-facts span{display:inline-flex;align-items:center;gap:8px}
+.hero-facts svg{width:16px;height:16px;color:var(--ok);flex:none}
+
+/* Trouble Patrol */
+.patrol{position:relative;border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,#0d1014,#0a0c0f);overflow:hidden;box-shadow:0 40px 80px -40px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.04);min-width:0}
+.patrol-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);font-family:var(--f-mono);font-size:.74rem;color:var(--ink-3)}
+.patrol-top .dots{display:flex;gap:6px}.patrol-top .dots i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.status-chip{display:inline-flex;align-items:center;gap:8px;padding:4px 10px;border-radius:999px;border:1px solid rgba(61,220,151,.35);color:var(--ok);background:rgba(61,220,151,.08);transition:color .3s,border-color .3s,background .3s;white-space:nowrap}
+.status-chip i{width:7px;height:7px;border-radius:50%;background:currentColor}
+.status-chip.alert{color:var(--bad);border-color:rgba(255,93,77,.4);background:rgba(255,93,77,.08)}
+.status-chip.alert i{animation:blink .8s infinite}
+@keyframes blink{50%{opacity:.2}}
+#patrolCanvas{display:block;width:100%;aspect-ratio:16/10.5;cursor:crosshair;touch-action:manipulation}
+.patrol-log{border-top:1px solid var(--line);padding:12px 16px 14px;font-family:var(--f-mono);font-size:.76rem;display:grid;gap:6px;min-height:104px}
+.patrol-log .row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:baseline;color:var(--ink-2);animation:rowin .4s ease}
+.patrol-log .row time{color:var(--ink-3)}
+.patrol-log .row b{font-weight:500;color:var(--ok);white-space:nowrap}
+.patrol-log .row b.bad{color:var(--bad)}
+.patrol-log .row span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@keyframes rowin{from{opacity:0;transform:translateY(4px)}}
+@media (max-width:560px){.p-url{display:none}}
+@media (max-width:400px){.brand small{display:none}}
+.patrol-hint{position:absolute;right:12px;top:56px;font-family:var(--f-label);text-transform:uppercase;letter-spacing:.12em;font-size:.66rem;color:var(--ink-3);background:rgba(8,9,11,.7);padding:4px 10px;border-radius:999px;border:1px solid var(--line);pointer-events:none}
+.patrol-foot{display:flex;justify-content:space-between;gap:12px;padding:10px 16px;border-top:1px solid var(--line);font-family:var(--f-label);text-transform:uppercase;letter-spacing:.12em;font-size:.7rem;color:var(--ink-3)}
+.patrol-foot b{color:var(--ink);font-family:var(--f-mono);font-weight:500;letter-spacing:0;font-variant-numeric:tabular-nums}
+
+/* Experience marquee */
+.exp{border-block:1px solid var(--line);background:#0b0d10;padding-block:22px;overflow:hidden}
+.exp .wrap{display:flex;align-items:center;gap:28px}
+.exp .label{color:var(--ink-3);white-space:nowrap;flex:none}
+.marquee{overflow:hidden;flex:1;min-width:0;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee-track{display:flex;gap:44px;width:max-content;animation:marq 38s linear infinite}
+.marquee-track span{font-family:var(--f-display);font-weight:600;font-size:1.05rem;color:var(--ink-2);white-space:nowrap;display:inline-flex;align-items:center;gap:44px}
+.marquee-track span::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--orange);opacity:.7}
+@keyframes marq{to{transform:translateX(-50%)}}
+@media (max-width:640px){.exp .wrap{flex-direction:column;align-items:flex-start;gap:12px}.marquee{width:100%}}
+
+/* Promise / personable */
+.promise{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,72px);align-items:start}
+@media (max-width:900px){.promise{grid-template-columns:1fr}}
+.promise-statement{display:grid;gap:22px;position:sticky;top:110px}
+@media (max-width:900px){.promise-statement{position:static}}
+.big-quote{font-family:var(--f-display);font-size:clamp(1.6rem,3.4vw,2.5rem);line-height:1.15;font-weight:600;letter-spacing:-.01em}
+.big-quote em{font-style:normal;color:var(--orange)}
+.note{background:var(--deck);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;display:grid;gap:12px;color:var(--ink-2);max-width:56ch}
+.note .sig{display:flex;align-items:center;gap:12px;color:var(--ink);font-weight:600}
+.note .sig img{width:36px;height:36px}
+.note .sig small{display:block;color:var(--ink-3);font-weight:400;font-size:.85rem}
+.promises{display:grid;gap:0;border-top:1px solid var(--line)}
+.prom{display:grid;grid-template-columns:52px 1fr;gap:18px;padding:24px 0;border-bottom:1px solid var(--line)}
+.prom .ico{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:var(--deck);border:1px solid var(--line);color:var(--orange);transition:transform .3s,border-color .3s}
+.prom:hover .ico{transform:rotate(-6deg) scale(1.05);border-color:var(--orange)}
+.prom .ico svg{width:24px;height:24px}
+.prom h3{margin-bottom:6px}
+.prom p{color:var(--ink-2)}
+
+/* Services */
+.seg{display:inline-flex;padding:4px;border:1px solid var(--line);border-radius:999px;background:var(--deck);position:relative}
+.seg button{position:relative;z-index:1;border:0;background:none;padding:10px 20px;border-radius:999px;cursor:pointer;font-family:var(--f-label);text-transform:uppercase;letter-spacing:.1em;font-size:.88rem;color:var(--ink-2);transition:color .25s}
+.seg button[aria-pressed="true"]{color:var(--orange-ink)}
+.seg .thumb{position:absolute;top:4px;bottom:4px;left:4px;border-radius:999px;background:var(--orange);transition:left .3s cubic-bezier(.3,.7,.2,1),width .3s cubic-bezier(.3,.7,.2,1)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:980px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.svc-grid{grid-template-columns:1fr}}
+.svc{position:relative;display:grid;gap:12px;align-content:start;padding:26px 24px;border:1px solid var(--line);border-radius:var(--r);background:var(--deck);overflow:hidden;transition:border-color .3s,transform .3s;animation:svcin .45s ease both}
+.svc::before{content:"";position:absolute;inset:0;background:radial-gradient(260px 180px at var(--mx,50%) var(--my,0%),rgba(230,115,0,.14),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}
+.svc:hover{border-color:#3a3127;transform:translateY(-3px)}
+.svc:hover::before{opacity:1}
+.svc .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(230,115,0,.1);color:var(--orange)}
+.svc .ico svg{width:22px;height:22px}
+.svc p{color:var(--ink-2);font-size:.97rem}
+.svc ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.svc li{font-size:.78rem;font-family:var(--f-mono);color:var(--ink-3);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+@keyframes svcin{from{opacity:.0;transform:translateY(10px)}}
+
+/* Health check */
+.hc{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(24px,4vw,48px);align-items:start}
+@media (max-width:900px){.hc{grid-template-columns:1fr}}
+.hc-qs{display:grid;gap:10px;min-width:0}
+.q{display:grid;grid-template-columns:1fr auto;gap:12px 18px;align-items:center;padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:var(--deck);transition:border-color .3s}
+.q.yes{border-color:rgba(61,220,151,.35)}
+.q.no{border-color:rgba(255,93,77,.35)}
+.q p{font-weight:500}
+.q small{display:block;color:var(--ink-3);font-size:.85rem;font-weight:400;margin-top:2px}
+.yn{display:flex;gap:6px}
+.yn button{min-width:58px;min-height:38px;border-radius:999px;border:1px solid var(--line);background:none;cursor:pointer;font-family:var(--f-label);text-transform:uppercase;letter-spacing:.08em;font-size:.82rem;color:var(--ink-2);transition:all .2s}
+.yn button:hover{border-color:var(--ink-3);color:var(--ink)}
+.yn button[aria-pressed="true"][data-v="1"]{background:var(--ok);border-color:var(--ok);color:#03140c}
+.yn button[aria-pressed="true"][data-v="0"]{background:var(--bad);border-color:var(--bad);color:#1a0402}
+.yn button[aria-pressed="true"][data-v="u"]{background:var(--deck-2);border-color:var(--ink-3);color:var(--ink)}
+@media (max-width:560px){.q{grid-template-columns:1fr}}
+.hc-card{position:sticky;top:100px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,#11141a,#0c0e12);padding:28px;display:grid;gap:18px;justify-items:center;text-align:center}
+@media (max-width:900px){.hc-card{position:static}}
+.gauge{width:min(260px,100%);aspect-ratio:2/1.15;max-width:100%}
+.gauge text{font-family:var(--f-display);fill:var(--ink)}
+.hc-verdict{font-family:var(--f-display);font-size:1.2rem;font-weight:600}
+.hc-sub{color:var(--ink-2);font-size:.95rem;max-width:40ch}
+.hc-fixes{list-style:none;margin:0;padding:0;display:grid;gap:8px;width:100%;text-align:left}
+.hc-fixes li{display:grid;grid-template-columns:18px 1fr;gap:10px;font-size:.92rem;color:var(--ink-2)}
+.hc-fixes li::before{content:"";width:8px;height:8px;margin-top:8px;border-radius:50%;background:var(--bad)}
+.hc-fixes li.u::before{background:var(--orange)}
+.hc-progress{font-family:var(--f-mono);font-size:.78rem;color:var(--ink-3)}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;position:relative}
+@media (max-width:860px){.steps{grid-template-columns:1fr}}
+.step{position:relative;display:grid;gap:12px;align-content:start;padding:28px 24px;border-radius:var(--r);border:1px solid var(--line);background:var(--deck)}
+.step .n{font-family:var(--f-mono);font-size:.8rem;color:var(--orange);display:flex;align-items:center;gap:10px}
+.step .n::after{content:"";flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--orange) 0 8px,transparent 8px 14px);opacity:.5}
+.step p{color:var(--ink-2)}
+
+/* Plans */
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch}
+@media (max-width:1240px){.plans{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.plans{grid-template-columns:1fr}}
+.plan{position:relative;min-width:0;display:flex;flex-direction:column;gap:16px;padding:28px 24px;border:1px solid var(--line);border-radius:18px;background:var(--deck)}
+.plan.feat{border-color:var(--orange);background:linear-gradient(180deg,rgba(230,115,0,.08),var(--deck) 40%)}
+.plan .badge{position:absolute;top:-12px;left:24px;background:var(--orange);color:var(--orange-ink);font-family:var(--f-label);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;padding:4px 12px;border-radius:999px;font-weight:600}
+.plan .for{font-family:var(--f-label);text-transform:uppercase;letter-spacing:.14em;font-size:.74rem;color:var(--ink-3)}
+.plan .price{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.plan .price b{font-family:var(--f-display);font-size:2.1rem;font-weight:700;font-variant-numeric:tabular-nums}
+.plan .price span{color:var(--ink-3);font-size:.9rem}
+.plan .blurb{color:var(--ink-2);font-size:.95rem}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;flex:1}
+.plan li{display:grid;grid-template-columns:18px 1fr;gap:10px;font-size:.94rem}
+.plan li svg{width:16px;height:16px;margin-top:4px;color:var(--ok)}
+.plan .btn{width:100%;white-space:normal;text-align:center;padding:10px 16px;line-height:1.2}
+.plans-note{margin-top:20px;color:var(--ink-3);font-size:.9rem}
+
+/* Area band */
+.area{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+@media (max-width:860px){.area{grid-template-columns:1fr}}
+.cities{display:flex;flex-wrap:wrap;gap:8px}
+.cities span{padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:.92rem;color:var(--ink-2);background:var(--deck)}
+.cities span.hq{border-color:var(--orange);color:var(--ink)}
+.route{border:1px solid var(--line);border-radius:18px;background:var(--deck);padding:24px;display:grid;gap:16px}
+.route svg{width:100%;height:auto}
+.route .legend{display:flex;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--ink-3)}
+.route .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:middle}
+
+/* FAQ */
+.faq{display:grid;gap:10px;max-width:860px}
+.faq details{border:1px solid var(--line);border-radius:12px;background:var(--deck);transition:border-color .3s}
+.faq details[open]{border-color:#3a3127}
+.faq summary{cursor:pointer;list-style:none;padding:18px 22px;font-weight:600;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--f-mono);color:var(--orange);font-size:1.3rem;line-height:1;transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 22px 20px;color:var(--ink-2);max-width:68ch}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(24px,4vw,56px);align-items:start}
+@media (max-width:900px){.contact{grid-template-columns:1fr}}
+.contact-side{display:grid;gap:20px;min-width:0}
+.now{border:1px solid var(--line);border-radius:var(--r);background:var(--deck);padding:22px;display:grid;gap:14px}
+.now h3{display:flex;align-items:center;gap:10px}
+.now-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--stage)}
+.now-row svg{width:20px;height:20px;color:var(--orange)}
+.now-row div{min-width:0}
+.now-row small{display:block;color:var(--ink-3);font-size:.78rem;font-family:var(--f-label);text-transform:uppercase;letter-spacing:.12em}
+.now-row a,.now-row span.val{font-weight:600;text-decoration:none;overflow-wrap:anywhere;user-select:all}
+.msg-row{text-decoration:none;transition:border-color .2s}
+.msg-row:hover{border-color:var(--orange)}
+.msg-row .val{user-select:none}
+.msg-row .go{color:var(--orange);font-size:1.2rem}
+.copy{border:1px solid var(--line);background:none;border-radius:8px;padding:6px 10px;cursor:pointer;font-family:var(--f-label);text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;color:var(--ink-2)}
+.copy:hover{border-color:var(--orange);color:var(--orange-hi)}
+.addr{color:var(--ink-3);font-size:.92rem}
+form.card{border:1px solid var(--line);border-radius:20px;background:var(--deck);padding:clamp(20px,3vw,32px);display:grid;gap:18px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:560px){.row2{grid-template-columns:1fr}}
+.field{display:grid;gap:6px;min-width:0}
+.field label,.field legend{font-family:var(--f-label);text-transform:uppercase;letter-spacing:.12em;font-size:.76rem;color:var(--ink-2);padding:0}
+.field input,.field select,.field textarea{width:100%;min-height:48px;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--stage);transition:border-color .2s,box-shadow .2s}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(230,115,0,.18)}
+.field.bad input,.field.bad select,.field.bad textarea{border-color:var(--bad)}
+.field .err{color:var(--bad);font-size:.82rem;min-height:0}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.chip{position:relative}
+.field .chip{text-transform:none;letter-spacing:0;font-family:var(--f-body);font-size:inherit;color:inherit}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip span{display:inline-flex;align-items:center;min-height:38px;padding:0 14px;border-radius:999px;border:1px solid var(--line);font-size:.9rem;color:var(--ink-2);cursor:pointer;transition:all .2s;background:var(--stage)}
+.chip input:checked+span{background:rgba(230,115,0,.14);border-color:var(--orange);color:var(--ink)}
+.chip input:focus-visible+span{outline:2px solid var(--orange-hi);outline-offset:2px}
+.urg .chip input:checked+span[data-u="2"]{background:rgba(255,93,77,.15);border-color:var(--bad)}
+.form-foot{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;justify-content:space-between}
+.form-foot small{color:var(--ink-3);max-width:44ch}
+.hc-attach{display:none;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;border:1px dashed var(--orange);color:var(--ink-2);font-size:.9rem}
+.hc-attach.show{display:flex}
+.hc-attach button{margin-left:auto;background:none;border:0;color:var(--ink-3);cursor:pointer;font-size:1.1rem}
+.ok-panel{display:none;text-align:center;gap:14px;justify-items:center;padding:24px 0}
+form.done>*:not(.ok-panel){display:none}
+form.done .ok-panel{display:grid}
+.ok-panel .tick{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:rgba(61,220,151,.12);color:var(--ok)}
+.ok-panel .tick svg{width:30px;height:30px}
+.ok-panel p{color:var(--ink-2);max-width:46ch}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding-block:48px 28px;background:#060708}
+.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:32px}
+@media (max-width:760px){.foot{grid-template-columns:1fr}}
+.foot-brand{display:flex;gap:14px;align-items:center}
+.foot-brand img{width:52px;height:52px}
+footer h4{font-family:var(--f-label);text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;color:var(--ink-3);margin:0 0 12px;font-weight:500}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer ul a{color:var(--ink-2);text-decoration:none}
+footer ul a:hover{color:var(--orange-hi)}
+.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:36px;padding-top:20px;border-top:1px solid var(--line);color:var(--ink-3);font-size:.85rem}
+
+/* Mobile dock + toast */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:linear-gradient(transparent,rgba(8,9,11,.95) 40%);display:none;transform:translateY(110%);transition:transform .35s}
+.dock.show{transform:none}
+.dock .btn{width:100%}
+@media (max-width:760px){.dock{display:block}}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;z-index:70;background:var(--deck-2);border:1px solid var(--line);padding:12px 18px;border-radius:12px;transition:all .3s;pointer-events:none;max-width:calc(100% - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* Reveal: visible at rest, gentle lift when JS marks it */
+.rv{transition:transform .7s cubic-bezier(.2,.7,.2,1),opacity .7s}
+.rv.pre{transform:translateY(18px);opacity:.001}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv.pre{transform:none;opacity:1}
+}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#contact" style="position:absolute;left:-999px">Skip to contact form</a>
+
+<div class="portal-bar">
+  <div class="wrap">
+    <nav aria-label="G Street Portal businesses">
+      <a href="https://www.gstreetportal.com/home" class="pb-home" aria-label="G Street Portal home" title="G Street Portal"><img src="assets/gstreet-seal.webp" alt="" width="20" height="20"></a>
+      <a href="https://www.gstreetportal.com/taxes-bookkeeping">Taxes &amp; Bookkeeping</a>
+      <a href="#top" aria-current="page">iT Solutions</a>
+      <a href="https://gstreetdjs.com/">DJ &amp; Karaoke</a>
+    </nav>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="G Street iT home">
+      <img src="assets/gstreet-seal.webp" alt="" width="40" height="40">
+      <span><b>G STREET <i>iT</i></b><small>Business &amp; Personal iT Solutions</small></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#checkup">Tech Check-Up</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#plans">Plans</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="btn btn-hot nav-cta" href="#contact">Get Help</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span></button>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="heroTitle">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><i class="pulse"></i>Avilla, IN · Fort Wayne · Chicagoland</span>
+      <h1 id="heroTitle">We're looking for <span class="trouble">trouble.</span></h1>
+      <p class="lede">So your technology never finds you. G Street iT keeps small businesses and households running with <b>real people you can call by name</b>. Remote support from the USA, never outsourced, and on-site help when you need a hand in the room.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-hot" href="#contact">Get Help Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#checkup">Free 60-Second Tech Check-Up</a>
+      </div>
+      <div class="hero-facts">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L20 7"/></svg>Never outsourced</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L20 7"/></svg>On-site &amp; remote</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L20 7"/></svg>Businesses &amp; homes</span>
+      </div>
+    </div>
+
+    <div class="patrol" aria-label="Animated demo: a G Street tech travels a street map fixing problems as they appear">
+      <div class="patrol-top">
+        <span class="dots"><i></i><i></i><i></i></span>
+        <span class="p-url" style="white-space:nowrap">trouble-patrol <span style="color:var(--orange)">· tap a device</span></span>
+        <span class="status-chip" id="statusChip" role="status"><i></i><span id="statusText">All systems healthy</span></span>
+      </div>
+      <canvas id="patrolCanvas"></canvas>
+            <div class="patrol-log" id="patrolLog" aria-live="off"></div>
+      <div class="patrol-foot"><span>Issues fixed while you've been here</span><b id="fixCount">0</b></div>
+    </div>
+  </div>
+</section>
+
+<div class="exp" aria-label="Experience">
+  <div class="wrap">
+    <span class="label">Experience earned supporting</span>
+    <div class="marquee"><div class="marquee-track" id="marquee"></div></div>
+  </div>
+</div>
+
+<section class="band" id="why" aria-labelledby="whyTitle">
+  <div class="wrap promise">
+    <div class="promise-statement rv">
+      <span class="label">Why G Street iT</span>
+      <h2 id="whyTitle" class="big-quote">Working on your technology <em>so you can work on your clients.</em></h2>
+      <div class="note">
+        <p>Most IT companies hand you a ticket number. We'd rather hand you a phone number. When you reach out, you talk to the same people who know your office, your printer's bad habits and your nephew's gaming PC.</p>
+        <p>We've supported national brands, county governments, police and fire departments. Now we bring that same experience to the businesses and families on our own streets.</p>
+        <div class="sig"><img src="assets/gstreet-seal.webp" alt=""><div>The G Street iT team<small>142 S Main St, Avilla, Indiana</small></div></div>
+      </div>
+    </div>
+    <div class="promises">
+      <div class="prom rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.4-7-11a7 7 0 0 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><h3>Real people, right here</h3><p>Remote support is never outsourced. Your call is answered in the USA by someone on our team, not a script.</p></div></div>
+      <div class="prom rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 10h8M8 13h5"/></svg></div><div><h3>Plain English, every time</h3><p>We tell you what broke, why it broke and what it'll cost before we touch it. No jargon, no surprises on the invoice.</p></div></div>
+      <div class="prom rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v3l2 2"/></svg></div><div><h3>We go looking for trouble</h3><p>Monitoring, updates and backups run quietly in the background, so most problems get fixed before you ever notice them.</p></div></div>
+      <div class="prom rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h2l2-6h10l2 6h2"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/><path d="M9 11V7h6v4"/></svg></div><div><h3>We show up</h3><p>On-site support across the Fort Wayne area and Chicagoland. Sometimes a problem needs someone standing next to it.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="services" aria-labelledby="svcTitle">
+  <div class="wrap">
+    <div class="sec-head split">
+      <div style="display:grid;gap:14px">
+        <span class="label">Services</span>
+        <h2 id="svcTitle">One call for all of it.</h2>
+        <p class="lede" id="svcLede">From a single laptop to a whole office network, we handle the tech so you don't have to juggle five vendors.</p>
+      </div>
+      <div class="seg" role="group" aria-label="Show services for">
+        <span class="thumb" id="segThumb"></span>
+        <button type="button" data-aud="biz" aria-pressed="true" id="segBiz">For Business</button>
+        <button type="button" data-aud="home" aria-pressed="false" id="segHome">For Home</button>
+      </div>
+    </div>
+    <div class="svc-grid" id="svcGrid"></div>
+  </div>
+</section>
+
+<section class="band" id="checkup" aria-labelledby="hcTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Free tech check-up</span>
+      <h2 id="hcTitle">How much trouble is hiding in your tech?</h2>
+      <p class="lede">Eight quick questions. Your score updates as you go, and you can send the results to us for a free follow-up call.</p>
+    </div>
+    <div class="hc">
+      <div class="hc-qs" id="hcQs"></div>
+      <aside class="hc-card" aria-live="polite">
+        <svg class="gauge" viewBox="0 0 200 115" role="img" aria-labelledby="gaugeLabel">
+          <title id="gaugeLabel">Tech health score</title>
+          <defs><linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#ff5d4d"/><stop offset=".5" stop-color="#e67300"/><stop offset="1" stop-color="#3ddc97"/></linearGradient></defs>
+          <path d="M20 100 A80 80 0 0 1 180 100" fill="none" stroke="#252a31" stroke-width="14" stroke-linecap="round"/>
+          <path id="gArc" d="M20 100 A80 80 0 0 1 180 100" fill="none" stroke="url(#gg)" stroke-width="14" stroke-linecap="round" stroke-dasharray="251.3" stroke-dashoffset="251.3" style="transition:stroke-dashoffset .6s cubic-bezier(.3,.7,.2,1)"/>
+          <line id="gNeedle" x1="100" y1="100" x2="100" y2="34" stroke="#f3f5f7" stroke-width="3" stroke-linecap="round" style="transform-origin:100px 100px;transform:rotate(-90deg);transition:transform .6s cubic-bezier(.3,.7,.2,1)"/>
+          <circle cx="100" cy="100" r="6" fill="#f3f5f7"/>
+          <text id="gScore" x="100" y="84" text-anchor="middle" font-size="24" font-weight="700">--</text>
+        </svg>
+        <div class="hc-verdict" id="hcVerdict">Start answering</div>
+        <p class="hc-sub" id="hcSub">Tap Yes, No or Not sure on each question. There are no wrong answers, only things worth fixing.</p>
+        <ul class="hc-fixes" id="hcFixes"></ul>
+        <span class="hc-progress" id="hcProg">0 of 8 answered</span>
+        <a class="btn btn-hot" href="#contact" id="hcSend">Send My Results</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="how" aria-labelledby="howTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">How it works</span>
+      <h2 id="howTitle">Three steps to tech you stop thinking about.</h2>
+    </div>
+    <div class="steps">
+      <div class="step rv"><span class="n">STEP 1</span><h3>We talk</h3><p>A free conversation about what's working, what's annoying you and what keeps you up at night. No sales pitch, just questions.</p></div>
+      <div class="step rv"><span class="n">STEP 2</span><h3>We fix</h3><p>We clean up what's broken, lock down what's exposed and write down how everything is set up, so nothing lives only in someone's head.</p></div>
+      <div class="step rv"><span class="n">STEP 3</span><h3>We patrol</h3><p>Ongoing monitoring, updates and backups. When something looks off, we're already on it, and we call you first.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="plans" aria-labelledby="planTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Plans &amp; pricing</span>
+      <h2 id="planTitle">Straight answers on price.</h2>
+      <p class="lede">Most IT companies make you book a sales call just to hear a number. Here are ours. Every business plan starts with a free assessment and a written quote.</p>
+    </div>
+    <div class="plans" id="planGrid"></div>
+    <p class="plans-note" id="plansNote"></p>
+  </div>
+</section>
+
+<section class="band alt" id="area" aria-labelledby="areaTitle">
+  <div class="wrap area">
+    <div style="display:grid;gap:18px">
+      <span class="label">Where we work</span>
+      <h2 id="areaTitle">Home base on Main Street. Support wherever you are.</h2>
+      <p class="lede">On-site visits across northeast Indiana and Chicagoland. Remote support reaches you anywhere in the country.</p>
+      <div class="cities" id="cities"></div>
+    </div>
+    <div class="route" aria-hidden="true">
+      <svg viewBox="0 0 520 260">
+        <defs><filter id="glow"><feGaussianBlur stdDeviation="3"/></filter></defs>
+        <path d="M60 150 C 150 120, 260 170, 330 130 S 440 90, 470 100" fill="none" stroke="#252a31" stroke-width="10" stroke-linecap="round"/>
+        <path d="M60 150 C 150 120, 260 170, 330 130 S 440 90, 470 100" fill="none" stroke="#e67300" stroke-width="2.5" stroke-dasharray="10 9" stroke-linecap="round"><animate attributeName="stroke-dashoffset" from="0" to="-38" dur="1.4s" repeatCount="indefinite"/></path>
+        <circle cx="60" cy="150" r="16" fill="#3ddc97" opacity=".18"/><circle cx="60" cy="150" r="6" fill="#3ddc97"/>
+        <text x="44" y="190" fill="#aab2bc" font-family="Oswald,Arial Narrow,sans-serif" font-size="14" text-anchor="start" letter-spacing="2">CHICAGOLAND</text>
+        <circle cx="400" cy="112" r="6" fill="#3ddc97"/>
+        <text x="400" y="150" fill="#aab2bc" font-family="Oswald,Arial Narrow,sans-serif" font-size="14" text-anchor="middle" letter-spacing="2">FORT WAYNE</text>
+        <circle cx="470" cy="100" r="22" fill="#e67300" opacity=".18" filter="url(#glow)"><animate attributeName="r" values="14;26;14" dur="2.4s" repeatCount="indefinite"/></circle>
+        <circle cx="470" cy="100" r="8" fill="#e67300"/>
+        <text x="470" y="64" fill="#f3f5f7" font-family="Unbounded,Arial Black,sans-serif" font-size="13" font-weight="700" text-anchor="end">AVILLA HQ</text>
+        <text x="470" y="80" fill="#737c87" font-family="JetBrains Mono,monospace" font-size="10" text-anchor="end">142 S MAIN ST</text>
+      </svg>
+      <div class="legend"><span><i style="background:#e67300"></i>Headquarters</span><span><i style="background:#3ddc97"></i>On-site service areas</span><span><i style="background:#e67300;width:18px;height:2px;border-radius:0"></i>Remote support, anywhere</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="faq" aria-labelledby="faqTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">FAQ</span>
+      <h2 id="faqTitle">Good questions.</h2>
+    </div>
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+
+<section class="band alt" id="contact" aria-labelledby="contactTitle">
+  <div class="wrap contact">
+    <div class="contact-side">
+      <span class="label">Let's talk</span>
+      <h2 id="contactTitle">Tell us what's going on.</h2>
+      <p class="lede">Something broken, something slow or something you just want a second opinion on. A real person reads every message.</p>
+      <div class="now">
+        <h3><i class="pulse"></i>Need help right now?</h3>
+        <div class="now-row" id="rowPhone" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><small>Call or text</small><a id="phoneLink" href="#"></a></div><button class="copy" type="button" data-copy="phone">Copy</button></div>
+        <a class="now-row msg-row" href="#itForm" id="msgRow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 10h8M8 13h5"/></svg><div><small>Message us</small><span class="val">Send a message from this page</span></div><span class="go">→</span></a>
+        <div class="now-row" id="rowRemote" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><div><small>Already a client?</small><a id="remoteLink" href="#" target="_blank" rel="noopener">Start a remote session</a></div><span></span></div>
+        <p class="addr">G Street iT · 142 S Main St, Avilla, IN 46710</p>
+      </div>
+    </div>
+
+    <form class="card" id="itForm" novalidate>
+      <div class="row2">
+        <div class="field"><label for="fName">Your name</label><input id="fName" name="name" autocomplete="name" data-rule="name"><span class="err" id="fName-err"></span></div>
+        <div class="field"><label for="fOrg">Business name <span style="text-transform:none;letter-spacing:0;color:var(--ink-3)">(if any)</span></label><input id="fOrg" name="business" autocomplete="organization"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="fEmail">Email</label><input id="fEmail" name="email" type="email" autocomplete="email" data-rule="email"><span class="err" id="fEmail-err"></span></div>
+        <div class="field"><label for="fPhone">Phone</label><input id="fPhone" name="phone" type="tel" autocomplete="tel" data-rule="phone"><span class="err" id="fPhone-err"></span></div>
+      </div>
+      <fieldset class="field">
+        <legend>What can we help with?</legend>
+        <div class="chips" id="topicChips"></div>
+      </fieldset>
+      <fieldset class="field urg">
+        <legend>How urgent is it?</legend>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="urgency" value="Whenever you can" id="u0" checked><span data-u="0">Whenever you can</span></label>
+          <label class="chip"><input type="radio" name="urgency" value="This week" id="u1"><span data-u="1">This week</span></label>
+          <label class="chip"><input type="radio" name="urgency" value="Today, something is down" id="u2"><span data-u="2">Today, something is down</span></label>
+        </div>
+      </fieldset>
+      <div class="field"><label for="fMsg">Tell us more</label><textarea id="fMsg" name="message" data-rule="msg" placeholder="Example: Our front desk PC takes 10 minutes to boot and the Wi-Fi drops in the back office."></textarea><span class="err" id="fMsg-err"></span></div>
+      <div class="hc-attach" id="hcAttach"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12l5 5L20 7"/></svg><span id="hcAttachText"></span><button type="button" id="hcDetach" aria-label="Remove check-up results">×</button></div>
+      <input type="text" name="company_website" id="hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+      <div class="form-foot">
+        <small>We only use your info to answer you. No mailing lists, ever.</small>
+        <button class="btn btn-hot" type="submit" id="itSubmit">Send Message</button>
+      </div>
+      <div class="ok-panel" role="status">
+        <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L20 7"/></svg></div>
+        <h3 id="okTitle">Thanks!</h3>
+        <p id="okText"></p>
+        <button class="btn btn-ghost" type="button" id="itAgain">Send another message</button>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div style="display:grid;gap:16px">
+        <div class="foot-brand"><img src="assets/gstreet-seal.webp" alt="G Street seal"><div><b style="font-family:var(--f-display)">G STREET <span style="color:var(--orange)">iT</span></b><p style="color:var(--ink-3)">Small Business &amp; Personal iT Solutions</p></div></div>
+        <p style="color:var(--ink-3);max-width:42ch">142 S Main St, Avilla, IN 46710. Serving Fort Wayne, northeast Indiana and Chicagoland. Remote support never outsourced.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="#services">Services</a></li><li><a href="#checkup">Tech Check-Up</a></li><li><a href="#plans">Plans &amp; pricing</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h4>G Street</h4><ul><li><a href="#contact">Contact us</a></li><li><a href="https://www.gstreetportal.com/taxes-bookkeeping">Taxes &amp; Bookkeeping</a></li><li><a href="https://gstreetdjs.com/">G Street DJs</a></li><li><a href="https://www.gstreetportal.com/home">G Street Portal</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© <span id="yr"></span> G Street iT</span><span>gstreetit.com</span></div>
+  </div>
+</footer>
+
+<div class="dock" id="dock"><a class="btn btn-hot" href="#contact">Get Help</a></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ==========================================================================
+   G STREET iT — SITE CONFIG
+   Everything you'll want to edit lives in this block.
+   ========================================================================== */
+const CONFIG = {
+  PHONE: "",                 // e.g. "(260) 555-0123". Blank hides the phone row.
+  REMOTE_SUPPORT_URL: "",    // Link to your remote-support tool. Blank hides the row.
+
+  // Contact form backend (Supabase Edge Function "it-inquiry"). It holds the
+  // destination address, so no email address appears anywhere on the site.
+  // Blank = preview mode (the form validates and shows success, nothing is sent).
+  INQUIRY_ENDPOINT: "https://kyyzqqbmvjugfotukkoh.supabase.co/functions/v1/it-inquiry",  // gstreet-planner project
+
+  // PLACEHOLDER PRICES. Confirm or change before the site goes live.
+  // Set price to null to show "Custom quote" instead of a number.
+  PLANS: [
+    { name: "Home Tech Help", for: "Homes & individuals", price: 60, unit: "/ hour", blurb: "Fix-it help for the computers, Wi-Fi and gadgets at home.",
+      items: ["Remote or in-home visits", "Virus & pop-up cleanup", "New computer setup & data transfer", "Wi-Fi, printers & smart TVs", "Patient, plain-English help"], cta: "Book Home Help" },
+    { name: "Business Essentials", for: "1–15 users", price: 99, unit: "/ user / mo", blurb: "Your outsourced help desk with proactive monitoring built in.",
+      items: ["Unlimited remote help desk", "24/7 monitoring & patching", "Managed antivirus / EDR", "Microsoft 365 user management", "Monthly health report"], cta: "Get a Free Assessment" },
+    { name: "Business Complete", for: "Growing teams", price: 119, unit: "/ user / mo", badge: "Most popular", feat: true, blurb: "Everything in Essentials plus on-site care and full protection.",
+      items: ["Everything in Essentials", "On-site visits included", "Backup & disaster recovery", "Firewall & network management", "Security awareness training", "Quarterly tech planning"], cta: "Get a Free Assessment" },
+    { name: "Projects", for: "One-time work", price: null, unit: "", blurb: "Flat-rate quotes for the bigger jobs.",
+      items: ["Office networks & Wi-Fi", "Office moves & new buildouts", "Server & cloud migrations", "Security cameras & door access", "Microsoft 365 / email migrations"], cta: "Request a Quote" },
+  ],
+  PLANS_NOTE: "Prices are starting points. Your free assessment gives you an exact written quote before any work begins.",
+
+  EXPERIENCE: ["Walgreens", "USG", "Kmart", "AIG", "Bank of America", "Dell", "County government", "Police departments", "Fire departments", "Manufacturers", "Accounting firms", "Small businesses"],
+  CITIES: [["Avilla", true], ["Kendallville"], ["Auburn"], ["Ligonier"], ["Garrett"], ["Fort Wayne"], ["Angola"], ["Chicago"], ["Chicagoland suburbs"]],
+};
+
+/* ---------- Content ---------- */
+const I = {
+  net:'<path d="M12 20h.01M8.5 16.5a5 5 0 0 1 7 0M5 13a10 10 0 0 1 14 0M2 9.5a15 15 0 0 1 20 0"/>',
+  shield:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>',
+  desk:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>',
+  wrench:'<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z"/>',
+  cloud:'<path d="M7 18a5 5 0 1 1 1-9.9A6 6 0 0 1 19 10a4 4 0 0 1-1 8z"/>',
+  mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+  eye:'<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+  home:'<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
+  printer:'<path d="M6 9V3h12v6M6 18H4v-7h16v7h-2"/><rect x="6" y="14" width="12" height="7"/>',
+  bug:'<rect x="8" y="6" width="8" height="14" rx="4"/><path d="M12 10v6M4 10h4M16 10h4M4 16h4M16 16h4M9 4l1.5 2M15 4l-1.5 2"/>',
+  phone:'<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>',
+  people:'<circle cx="9" cy="8" r="3.5"/><path d="M2 20a7 7 0 0 1 14 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M22 20a7 7 0 0 0-4-6.3"/>',
+  camera:'<path d="M3 8h4l2-3h6l2 3h4v11H3z"/><circle cx="12" cy="13" r="3.5"/>',
+};
+const SERVICES = {
+  biz: {
+    lede: "From a single laptop to a whole office network, we handle the tech so you don't have to juggle five vendors.",
+    items: [
+      { i:"eye", t:"Managed iT Services", d:"Your outsourced IT department. We monitor, patch and support every computer so problems get caught early.", tags:["Help desk","Monitoring","Patching"] },
+      { i:"net", t:"Networking & Wi-Fi", d:"Fast, reliable networks designed for how your office actually works, from the router to the back room.", tags:["Firewalls","Wi-Fi","Cabling"] },
+      { i:"shield", t:"Cybersecurity", d:"Layered protection against ransomware, phishing and data loss, plus training so your team spots the bad stuff.", tags:["EDR","MFA","Email filtering"] },
+      { i:"cloud", t:"Backup & Recovery", d:"Automatic, tested backups on-site and in the cloud. If the worst happens, you're back in business fast.", tags:["Cloud backup","DR plans"] },
+      { i:"mail", t:"Microsoft 365 & Email", d:"Setup, migrations, licensing and day-to-day admin for email, Teams, OneDrive and SharePoint.", tags:["Exchange","Teams","SharePoint"] },
+      { i:"wrench", t:"Repair & On-Site Support", d:"Hardware repair, new equipment setup and hands-on help across Fort Wayne and Chicagoland.", tags:["PCs","Printers","Servers"] },
+    ]
+  },
+  home: {
+    lede: "The same pros businesses trust, for the tech in your house. Patient help with no talking down.",
+    items: [
+      { i:"bug", t:"Virus & Scam Cleanup", d:"Pop-ups, fake warnings or a weird phone call from \"Microsoft\"? We clean it up and lock it down.", tags:["Malware","Scam help"] },
+      { i:"desk", t:"Computer Repair & Tune-Ups", d:"Slow, crashing or won't turn on. We diagnose it honestly and tell you if it's worth fixing.", tags:["PC","Mac","Laptops"] },
+      { i:"net", t:"Home Wi-Fi That Works", d:"Dead zones gone. Mesh systems, router setup and secure networks for the whole family.", tags:["Mesh","Routers"] },
+      { i:"home", t:"New Device Setup", d:"New computer, phone or smart TV? We set it up and move your photos, files and passwords over safely.", tags:["Data transfer","Setup"] },
+      { i:"printer", t:"Printers & Smart Home", d:"Printers that print, cameras that record and smart speakers that listen to the right person.", tags:["Printers","Cameras"] },
+      { i:"people", t:"Tech Help for Parents & Seniors", d:"One-on-one help, parental controls and a friendly number to call when something looks off.", tags:["Coaching","Safety"] },
+    ]
+  }
+};
+const QUESTIONS = [
+  { q:"Are your important files backed up automatically?", s:"Not just \"I think so.\" Backed up somewhere other than the computer itself.", w:18, fix:"Set up automatic, tested backups" },
+  { q:"Do you use two-step login (MFA) on email?", s:"A code or app prompt when you sign in from a new device.", w:16, fix:"Turn on multi-factor sign-in for email" },
+  { q:"Are your computers getting updates regularly?", s:"Windows, macOS and your apps.", w:12, fix:"Automate security updates" },
+  { q:"Is every computer running real antivirus protection?", s:"Something beyond the free trial that came with it.", w:12, fix:"Add managed antivirus / EDR" },
+  { q:"Is your Wi-Fi password-protected and separate for guests?", s:"Visitors shouldn't share the network your files are on.", w:10, fix:"Separate guest Wi-Fi from your main network" },
+  { q:"Are your computers less than 5 years old?", s:"Older machines slow you down and stop getting security fixes.", w:10, fix:"Plan replacements for aging computers" },
+  { q:"Could you name who to call when tech breaks?", s:"A person, not \"my cousin, maybe.\"", w:12, fix:"Get a go-to IT contact you trust" },
+  { q:"Would you spot a fake email asking you to log in?", s:"Phishing is how most breaches start.", w:10, fix:"Short phishing-awareness training" },
+];
+const FAQ = [
+  ["Do you work with homes or just businesses?", "Both. About half of what we do is for small businesses and the other half is helping people with the tech at home. Same people, same care."],
+  ["Is your support outsourced?", "Never. Remote support is handled by our own team in the USA. When you contact G Street iT you reach someone who knows your setup."],
+  ["What areas do you cover on-site?", "Our home base is Avilla, Indiana. We do on-site work around Fort Wayne, Auburn, Kendallville and northeast Indiana, plus Chicagoland. Remote help works anywhere."],
+  ["We already have an IT person. Can you still help?", "Yes. We can back up your in-house person, take on projects they don't have time for, or cover vacations and after-hours."],
+  ["Do you support Macs?", "Yes. Windows PCs, Macs, iPhones, Android, printers, networks and most of what's plugged into the wall."],
+  ["How does pricing work?", "Home help is billed by the hour. Business plans are a flat monthly rate per user, so your IT cost is predictable. Projects get a written flat quote before we start."],
+  ["What happens on a free assessment?", "We sit down (in person or on a call), look at your computers, network, backups and security, then give you a plain-English summary of what's fine, what's risky and what it would cost to fix. You're under no obligation."],
+];
+const TOPICS = ["Slow or broken computer","Wi-Fi / network","Email & Microsoft 365","Virus or scam","Backups","New equipment setup","Managed IT plan","Free assessment","Something else"];
+
+/* ---------- Helpers ---------- */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const svg = (p, sw = 1.8) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
+let toastT; function toast(m) { const t = $("#toast"); t.textContent = m; t.classList.add("show"); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("show"), 2800); }
+$("#yr").textContent = new Date().getFullYear();
+
+/* ---------- Nav ---------- */
+const nav = $("#nav");
+addEventListener("scroll", () => { nav.classList.toggle("scrolled", scrollY > 10); $("#dock").classList.toggle("show", scrollY > 600 && !isNear("#contact")); }, { passive: true });
+function isNear(sel) { const r = $(sel).getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }
+$("#menuBtn").addEventListener("click", () => { const o = nav.classList.toggle("open"); $("#menuBtn").setAttribute("aria-expanded", o); });
+$$("#navLinks a").forEach(a => a.addEventListener("click", () => { nav.classList.remove("open"); $("#menuBtn").setAttribute("aria-expanded", false); }));
+
+/* ---------- Marquee, cities, FAQ ---------- */
+$("#marquee").innerHTML = [...CONFIG.EXPERIENCE, ...CONFIG.EXPERIENCE].map(n => `<span>${esc(n)}</span>`).join("");
+$("#cities").innerHTML = CONFIG.CITIES.map(([c, hq]) => `<span class="${hq ? "hq" : ""}">${esc(c)}${hq ? " · HQ" : ""}</span>`).join("");
+$("#faqList").innerHTML = FAQ.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("");
+
+/* ---------- Services toggle ---------- */
+function renderServices(aud) {
+  const set = SERVICES[aud];
+  $("#svcLede").textContent = set.lede;
+  $("#svcGrid").innerHTML = set.items.map((s, k) => `<article class="svc" style="animation-delay:${k * 50}ms"><div class="ico">${svg(I[s.i])}</div><h3>${esc(s.t)}</h3><p>${esc(s.d)}</p><ul>${s.tags.map(t => `<li>${esc(t)}</li>`).join("")}</ul></article>`).join("");
+  $$(".seg button").forEach(b => b.setAttribute("aria-pressed", b.dataset.aud === aud));
+  moveThumb();
+}
+function moveThumb() { const b = $('.seg button[aria-pressed="true"]'); const th = $("#segThumb"); th.style.left = b.offsetLeft + "px"; th.style.width = b.offsetWidth + "px"; }
+$$(".seg button").forEach(b => b.addEventListener("click", () => renderServices(b.dataset.aud)));
+addEventListener("resize", moveThumb);
+document.fonts && document.fonts.ready.then(moveThumb);
+$("#svcGrid").addEventListener("pointermove", e => { const c = e.target.closest(".svc"); if (!c) return; const r = c.getBoundingClientRect(); c.style.setProperty("--mx", (e.clientX - r.left) + "px"); c.style.setProperty("--my", (e.clientY - r.top) + "px"); });
+renderServices("biz");
+
+/* ---------- Plans ---------- */
+const check = svg('<path d="M5 12l5 5L20 7"/>', 2.4);
+$("#planGrid").innerHTML = CONFIG.PLANS.map(p => `
+  <div class="plan${p.feat ? " feat" : ""}">${p.badge ? `<span class="badge">${esc(p.badge)}</span>` : ""}
+    <div style="display:grid;gap:6px"><span class="for">${esc(p.for)}</span><h3>${esc(p.name)}</h3></div>
+    <div class="price">${p.price == null ? `<b style="font-size:1.6rem">Custom quote</b>` : `<span>from</span><b>$${p.price}</b><span>${esc(p.unit)}</span>`}</div>
+    <p class="blurb">${esc(p.blurb)}</p>
+    <ul>${p.items.map(i => `<li>${check}<span>${esc(i)}</span></li>`).join("")}</ul>
+    <a class="btn ${p.feat ? "btn-hot" : "btn-ghost"}" href="#contact" data-plan="${esc(p.name)}">${esc(p.cta)}</a>
+  </div>`).join("");
+$("#plansNote").textContent = CONFIG.PLANS_NOTE;
+$$("[data-plan]").forEach(a => a.addEventListener("click", () => {
+  const map = { "Home Tech Help": "Slow or broken computer", "Projects": "New equipment setup" };
+  const t = map[a.dataset.plan] || "Free assessment"; const box = $$('#topicChips input').find(x => x.value === t); if (box) box.checked = true;
+  if (!$("#fMsg").value) $("#fMsg").value = `I'm interested in ${a.dataset.plan}. `;
+}));
+
+/* ---------- Health check ---------- */
+const answers = Array(QUESTIONS.length).fill(null);
+$("#hcQs").innerHTML = QUESTIONS.map((q, k) => `
+  <div class="q" id="q${k}"><p>${esc(q.q)}<small>${esc(q.s)}</small></p>
+    <div class="yn" role="group" aria-label="${esc(q.q)}">
+      <button type="button" data-k="${k}" data-v="1" aria-pressed="false">Yes</button>
+      <button type="button" data-k="${k}" data-v="0" aria-pressed="false">No</button>
+      <button type="button" data-k="${k}" data-v="u" aria-pressed="false">Not sure</button>
+    </div></div>`).join("");
+$("#hcQs").addEventListener("click", e => {
+  const b = e.target.closest("button[data-k]"); if (!b) return;
+  const k = +b.dataset.k; answers[k] = b.dataset.v;
+  $$(`button[data-k="${k}"]`).forEach(x => x.setAttribute("aria-pressed", x === b));
+  const q = $("#q" + k); q.classList.toggle("yes", b.dataset.v === "1"); q.classList.toggle("no", b.dataset.v === "0");
+  scoreHC();
+});
+function hcResult() {
+  const answered = answers.filter(a => a !== null).length;
+  let got = 0, possible = 0; const fixes = [];
+  QUESTIONS.forEach((q, k) => { const a = answers[k]; if (a === null) return; possible += q.w; if (a === "1") got += q.w; else if (a === "u") { got += q.w * .4; fixes.push({ t: q.fix, u: true }); } else fixes.push({ t: q.fix, u: false }); });
+  return { answered, score: possible ? Math.round(got / possible * 100) : null, fixes };
+}
+function scoreHC() {
+  const { answered, score, fixes } = hcResult();
+  $("#hcProg").textContent = `${answered} of ${QUESTIONS.length} answered`;
+  if (score === null) return;
+  $("#gScore").textContent = score;
+  $("#gArc").style.strokeDashoffset = 251.3 * (1 - score / 100);
+  $("#gNeedle").style.transform = `rotate(${-90 + score * 1.8}deg)`;
+  const v = score >= 85 ? ["Looking sharp", "Your basics are covered. A quick review could make sure it stays that way."]
+          : score >= 60 ? ["A little trouble hiding", "Nothing on fire, but a few gaps a bad day could find. These are quick wins."]
+          : ["Trouble is out there", "A few of these gaps are how small businesses and families lose data or get scammed. Let's fix them together."];
+  $("#hcVerdict").textContent = v[0]; $("#hcSub").textContent = v[1];
+  $("#hcFixes").innerHTML = fixes.slice(0, 4).map(f => `<li class="${f.u ? "u" : ""}">${esc(f.t)}</li>`).join("");
+}
+$("#hcSend").addEventListener("click", () => {
+  const { answered, score, fixes } = hcResult();
+  if (!answered) return;
+  attachedHC = `Tech Check-Up score: ${score}/100 (${answered}/${QUESTIONS.length} answered).` + (fixes.length ? ` Gaps: ${fixes.map(f => f.t + (f.u ? " (not sure)" : "")).join("; ")}.` : " No gaps found.");
+  $("#hcAttachText").textContent = `Check-up results attached (score ${score}/100)`; $("#hcAttach").classList.add("show");
+  const box = $$('#topicChips input').find(x => x.value === "Free assessment"); if (box) box.checked = true;
+});
+let attachedHC = null;
+$("#hcDetach").addEventListener("click", () => { attachedHC = null; $("#hcAttach").classList.remove("show"); });
+
+/* ---------- Contact ---------- */
+if (CONFIG.PHONE) { $("#rowPhone").hidden = false; $("#phoneLink").textContent = CONFIG.PHONE; $("#phoneLink").href = "tel:" + CONFIG.PHONE.replace(/[^\d+]/g, ""); }
+if (CONFIG.REMOTE_SUPPORT_URL) { $("#rowRemote").hidden = false; $("#remoteLink").href = CONFIG.REMOTE_SUPPORT_URL; }
+$$(".copy").forEach(b => b.addEventListener("click", async () => {
+  const val = CONFIG.PHONE;
+  try { await navigator.clipboard.writeText(val); toast("Copied " + val); }
+  catch { const el = $("#phoneLink"); const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast("Selected. Press Ctrl+C to copy."); }
+}));
+$("#topicChips").innerHTML = TOPICS.map((t, k) => `<label class="chip"><input type="checkbox" name="topics" value="${esc(t)}" id="t${k}"><span>${esc(t)}</span></label>`).join("");
+
+const loadedAt = Date.now();
+const RULES = {
+  name: v => v.trim().length < 2 ? "Please enter your name." : "",
+  email: v => !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? "Enter an email like name@example.com." : "",
+  phone: v => v.trim() && v.replace(/\D/g, "").length < 10 ? "Enter a 10-digit phone number, or leave it blank." : "",
+  msg: v => v.trim().length < 5 ? "Tell us a little about what's going on." : "",
+};
+function validate(el, show) {
+  const msg = RULES[el.dataset.rule](el.value || ""); const f = el.closest(".field");
+  if (show) { f.classList.toggle("bad", !!msg); $("#" + el.id + "-err").textContent = msg; el.setAttribute("aria-invalid", !!msg); el.setAttribute("aria-describedby", el.id + "-err"); }
+  return !msg;
+}
+$$("#itForm [data-rule]").forEach(el => {
+  el.addEventListener("blur", () => { if (el.value) validate(el, true); });
+  el.addEventListener("input", () => { if (el.closest(".field").classList.contains("bad")) validate(el, true); });
+});
+$("#itForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const form = e.target; const bad = $$("[data-rule]", form).filter(el => !validate(el, true));
+  if (bad.length) { bad[0].focus(); toast(bad.length === 1 ? "One field needs a fix." : `${bad.length} fields need a fix.`); return; }
+  if ($("#hp").value) return;
+  const fd = new FormData(form);
+  const data = { name: fd.get("name"), business: fd.get("business"), email: fd.get("email"), phone: fd.get("phone"), urgency: fd.get("urgency"), topics: fd.getAll("topics").join(", "), message: fd.get("message"), checkup: attachedHC || "" };
+  const btn = $("#itSubmit"); btn.classList.add("busy");
+  if (Date.now() - loadedAt < 3000) { btn.classList.remove("busy"); return; } // bots submit instantly
+  data.elapsed_ms = Date.now() - loadedAt;
+  let preview = false;
+  try {
+    if (CONFIG.INQUIRY_ENDPOINT) {
+      const r = await fetch(CONFIG.INQUIRY_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) });
+      if (!r.ok) throw new Error("send failed");
+    } else { await new Promise(r => setTimeout(r, 900)); preview = true; }
+    $("#okTitle").textContent = `Thanks, ${data.name.trim().split(" ")[0]}!`;
+    $("#okText").textContent = `Your message is on its way. We'll reply to ${data.email}${data.urgency.startsWith("Today") ? " as fast as we can, since something is down" : ""}.` + (preview ? " (Preview mode: nothing was sent.)" : "");
+    form.classList.add("done");
+  } catch { toast(CONFIG.PHONE ? `We couldn't send that. Try again, or call ${CONFIG.PHONE}.` : "We couldn't send that. Check your connection and try again."); }
+  finally { btn.classList.remove("busy"); }
+});
+$("#itAgain").addEventListener("click", () => { const f = $("#itForm"); f.reset(); f.classList.remove("done"); $$(".field", f).forEach(x => x.classList.remove("bad")); attachedHC = null; $("#hcAttach").classList.remove("show"); });
+
+/* ---------- Reveal ---------- */
+if (!reduceMotion && "IntersectionObserver" in window) {
+  const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.remove("pre"); io.unobserve(en.target); } }), { rootMargin: "0px 0px -8% 0px" });
+  $$(".rv").forEach(el => { if (el.getBoundingClientRect().top > innerHeight) { el.classList.add("pre"); io.observe(el); } });
+}
+
+/* ==========================================================================
+   TROUBLE PATROL — street-grid canvas. Devices sit on intersections; trouble
+   pops up, the orange tech drives the streets to fix it.
+   ========================================================================== */
+(() => {
+  const cv = $("#patrolCanvas"), ctx = cv.getContext("2d");
+  const COLS = 6, ROWS = 4;
+  const C = { road: "#1b1f25", lane: "#e67300", ok: "#3ddc97", bad: "#ff5d4d", data: "#5cc8ff", ink: "#f3f5f7", ink3: "#737c87", block: "#0f1216" };
+  const DEVICES = [
+    { c:0, r:0, name:"Front desk PC", ic:"pc", issues:["Running slow","Blue screen","Won't boot"] },
+    { c:2, r:0, name:"Wi-Fi", ic:"wifi", issues:["Dead zone in back office","Dropping connections"] },
+    { c:5, r:0, name:"Email", ic:"mail", issues:["Phishing attempt blocked","Mailbox full"] },
+    { c:1, r:2, name:"Printer", ic:"print", issues:["Offline again","Paper jam (the classic)"] },
+    { c:3, r:1, name:"Server", ic:"server", issues:["Disk nearly full","Update needed"] },
+    { c:4, r:3, name:"Firewall", ic:"shield", issues:["Port scan detected","Firmware out of date"] },
+    { c:0, r:3, name:"Backups", ic:"cloud", issues:["Last backup failed","Restore test due"] },
+    { c:5, r:2, name:"Owner's laptop", ic:"pc", issues:["Pop-up virus","Battery swelling"] },
+  ];
+  DEVICES.forEach(d => { d.state = "ok"; d.t = 0; d.fixT = 0; });
+  let W = 0, H = 0, pad = 0, padY = 0, gx = 0, gy = 0, dpr = 1;
+  const tech = { c: 3, r: 3, x: 0, y: 0, path: [], target: null, trail: [] };
+  const packets = []; let fixed = 0, last = performance.now(), nextTrouble = 1.2, visible = true;
+
+  function size() {
+    const r = cv.getBoundingClientRect(); dpr = Math.min(devicePixelRatio || 1, 2);
+    W = r.width; H = r.height; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    pad = Math.max(30, W * .1); padY = Math.max(26, H * .09); gx = (W - pad * 2) / (COLS - 1); gy = (H - padY * 2) / (ROWS - 1);
+    const p = P(tech.c, tech.r); if (!tech.path.length) { tech.x = p.x; tech.y = p.y; }
+  }
+  const P = (c, r) => ({ x: pad + c * gx, y: padY + r * gy });
+
+  function route(c0, r0, c1, r1) { // drive along streets: horizontal then vertical
+    const pts = []; let c = c0, r = r0;
+    while (c !== c1) { c += Math.sign(c1 - c); pts.push([c, r]); }
+    while (r !== r1) { r += Math.sign(r1 - r); pts.push([c, r]); }
+    return pts;
+  }
+  const clock = () => new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  function log(msg, bad) {
+    const el = $("#patrolLog"); const row = document.createElement("div"); row.className = "row";
+    row.innerHTML = `<time>${clock()}</time><span>${esc(msg)}</span><b class="${bad ? "bad" : ""}">${bad ? "● TROUBLE" : "✓ FIXED"}</b>`;
+    el.prepend(row); while (el.children.length > 4) el.lastChild.remove();
+  }
+  function status() {
+    const n = DEVICES.filter(d => d.state === "bad").length; const chip = $("#statusChip");
+    chip.classList.toggle("alert", n > 0);
+    $("#statusText").textContent = n ? `${n} issue${n > 1 ? "s" : ""} · tech en route` : "All systems healthy";
+  }
+  function trouble(d) {
+    if (!d || d.state !== "ok") return;
+    d.state = "bad"; d.t = 0; d.issue = d.issues[Math.floor(Math.random() * d.issues.length)];
+    log(`${d.name}: ${d.issue}`, true); status(); dispatch();
+  }
+  function dispatch() {
+    if (tech.target) return;
+    const queue = DEVICES.filter(d => d.state === "bad"); if (!queue.length) return;
+    queue.sort((a, b) => (Math.abs(a.c - tech.c) + Math.abs(a.r - tech.r)) - (Math.abs(b.c - tech.c) + Math.abs(b.r - tech.r)));
+    tech.target = queue[0]; tech.path = route(tech.c, tech.r, tech.target.c, tech.target.r);
+    if (!tech.path.length) arrive();
+  }
+  function arrive() {
+    const d = tech.target; d.state = "fixing"; d.fixT = 0;
+  }
+  function finish(d) {
+    d.state = "ok"; d.t = 0; fixed++; $("#fixCount").textContent = fixed;
+    log(`${d.name}: ${d.issue}`, false); tech.target = null; status(); dispatch();
+  }
+
+  cv.addEventListener("click", e => {
+    const r = cv.getBoundingClientRect(); const x = e.clientX - r.left, y = e.clientY - r.top;
+    let best = null, bd = 1e9; DEVICES.forEach(d => { const p = P(d.c, d.r); const dd = Math.hypot(p.x - x, p.y - y); if (dd < bd) { bd = dd; best = d; } });
+    if (best && bd < Math.max(40, gx * .45)) { if (best.state === "ok") trouble(best); else toast("We're already on that one."); }
+  });
+
+  // icons drawn with simple strokes
+  function icon(kind, x, y, s, col) {
+    ctx.save(); ctx.translate(x, y); ctx.strokeStyle = col; ctx.lineWidth = 1.6; ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.beginPath();
+    const k = s / 12;
+    if (kind === "pc") { ctx.rect(-6*k,-5*k,12*k,8*k); ctx.moveTo(-3*k,6*k); ctx.lineTo(3*k,6*k); ctx.moveTo(0,3*k); ctx.lineTo(0,6*k); }
+    else if (kind === "wifi") { ctx.arc(0,4*k,9*k,-2.4,-.74); ctx.moveTo(-3.6*k,.5*k); ctx.arc(0,4*k,5*k,-2.4,-.74); ctx.moveTo(.6*k,4*k); ctx.arc(0,4*k,.6*k,0,7); }
+    else if (kind === "mail") { ctx.rect(-6*k,-4*k,12*k,9*k); ctx.moveTo(-6*k,-4*k); ctx.lineTo(0,1*k); ctx.lineTo(6*k,-4*k); }
+    else if (kind === "print") { ctx.rect(-6*k,-2*k,12*k,6*k); ctx.rect(-3.5*k,-6*k,7*k,4*k); ctx.rect(-3.5*k,2*k,7*k,4*k); }
+    else if (kind === "server") { ctx.rect(-5*k,-6*k,10*k,5*k); ctx.rect(-5*k,1*k,10*k,5*k); ctx.moveTo(-2.5*k,-3.5*k); ctx.lineTo(-2.4*k,-3.5*k); ctx.moveTo(-2.5*k,3.5*k); ctx.lineTo(-2.4*k,3.5*k); }
+    else if (kind === "shield") { ctx.moveTo(0,-6.5*k); ctx.lineTo(5.5*k,-4.5*k); ctx.lineTo(5.5*k,0); ctx.quadraticCurveTo(5*k,5*k,0,6.5*k); ctx.quadraticCurveTo(-5*k,5*k,-5.5*k,0); ctx.lineTo(-5.5*k,-4.5*k); ctx.closePath(); }
+    else if (kind === "cloud") { ctx.moveTo(-4*k,4*k); ctx.arc(-3.5*k,1*k,3*k,1.7,4.4); ctx.arc(1*k,-1*k,4*k,3.6,6); ctx.arc(4*k,2*k,2.5*k,4.9,1.6); ctx.closePath(); }
+    ctx.stroke(); ctx.restore();
+  }
+  function roundRect(x, y, w, h, r) { ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }
+
+  function draw(t) {
+    ctx.clearRect(0, 0, W, H);
+    // city blocks
+    ctx.fillStyle = C.block;
+    for (let c = 0; c < COLS - 1; c++) for (let r = 0; r < ROWS - 1; r++) { const p = P(c, r); roundRect(p.x + 12, p.y + 12, gx - 24, gy - 24, 8); ctx.fill(); }
+    // roads
+    ctx.strokeStyle = C.road; ctx.lineWidth = 16; ctx.lineCap = "round";
+    ctx.beginPath();
+    for (let c = 0; c < COLS; c++) { const a = P(c, 0), b = P(c, ROWS - 1); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); }
+    for (let r = 0; r < ROWS; r++) { const a = P(0, r), b = P(COLS - 1, r); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); }
+    ctx.stroke();
+    // dashed center lines (the G Street road)
+    ctx.save(); ctx.strokeStyle = C.lane; ctx.globalAlpha = .28; ctx.lineWidth = 1.5; ctx.setLineDash([6, 8]); ctx.lineDashOffset = -t * .02; ctx.stroke(); ctx.restore();
+    // street names
+    ctx.fillStyle = C.ink3; ctx.font = "500 9px 'JetBrains Mono', monospace"; ctx.globalAlpha = .7;
+    ctx.fillText("G ST", P(0, 1).x + 14, P(0, 1).y - 5); ctx.fillText("MAIN ST", P(3, 2).x + 14, P(3, 2).y - 5); ctx.globalAlpha = 1;
+    // packets
+    packets.forEach(pk => { ctx.fillStyle = C.data; ctx.globalAlpha = .75; ctx.beginPath(); ctx.arc(pk.x, pk.y, 1.8, 0, 7); ctx.fill(); }); ctx.globalAlpha = 1;
+    // devices
+    DEVICES.forEach(d => {
+      const p = P(d.c, d.r); const col = d.state === "bad" ? C.bad : d.state === "fixing" ? C.lane : C.ok;
+      if (d.state === "bad") { const k = (t / 900) % 1; ctx.strokeStyle = C.bad; ctx.globalAlpha = 1 - k; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(p.x, p.y, 16 + k * 22, 0, 7); ctx.stroke(); ctx.globalAlpha = 1; }
+      if (d.state === "fixing") { ctx.strokeStyle = C.lane; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(p.x, p.y, 20, -Math.PI / 2, -Math.PI / 2 + d.fixT * Math.PI * 2); ctx.stroke(); }
+      ctx.fillStyle = "#0b0d10"; ctx.beginPath(); ctx.arc(p.x, p.y, 15, 0, 7); ctx.fill();
+      ctx.strokeStyle = col; ctx.lineWidth = 1.5; ctx.globalAlpha = d.state === "ok" ? .55 : 1; ctx.stroke(); ctx.globalAlpha = 1;
+      icon(d.ic, p.x, p.y, 13, d.state === "ok" ? C.ink : col);
+      if (W > 360) { ctx.fillStyle = d.state === "bad" ? C.bad : C.ink3; ctx.font = "500 9.5px 'JetBrains Mono', monospace"; ctx.textAlign = "center"; ctx.fillText(d.name.toUpperCase(), p.x, p.y + 29); ctx.textAlign = "start"; }
+    });
+    // tech trail + dot
+    tech.trail.forEach((q, k) => { ctx.fillStyle = C.lane; ctx.globalAlpha = k / tech.trail.length * .35; ctx.beginPath(); ctx.arc(q[0], q[1], 4, 0, 7); ctx.fill(); }); ctx.globalAlpha = 1;
+    const g = ctx.createRadialGradient(tech.x, tech.y, 0, tech.x, tech.y, 22); g.addColorStop(0, "rgba(255,138,31,.55)"); g.addColorStop(1, "rgba(255,138,31,0)");
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(tech.x, tech.y, 22, 0, 7); ctx.fill();
+    ctx.fillStyle = C.lane; ctx.beginPath(); ctx.arc(tech.x, tech.y, 7, 0, 7); ctx.fill();
+    ctx.fillStyle = "#140a00"; ctx.font = "700 8px Unbounded, sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText("G", tech.x, tech.y + .5); ctx.textAlign = "start"; ctx.textBaseline = "alphabetic";
+  }
+
+  function spawnPacket() {
+    const horiz = Math.random() < .5;
+    if (horiz) { const r = Math.floor(Math.random() * ROWS); const dir = Math.random() < .5 ? 1 : -1; const a = P(dir > 0 ? 0 : COLS - 1, r); packets.push({ x: a.x, y: a.y, vx: dir * 60, vy: 0, life: (W - pad * 2) / 60 }); }
+    else { const c = Math.floor(Math.random() * COLS); const dir = Math.random() < .5 ? 1 : -1; const a = P(c, dir > 0 ? 0 : ROWS - 1); packets.push({ x: a.x, y: a.y, vx: 0, vy: dir * 60, life: (H - padY * 2) / 60 }); }
+  }
+
+  function step(now) {
+    const dt = Math.min(.05, (now - last) / 1000); last = now;
+    if (visible) {
+      // trouble spawner
+      nextTrouble -= dt;
+      if (nextTrouble <= 0) { const calm = DEVICES.filter(d => d.state === "ok"); if (calm.length && DEVICES.filter(d => d.state !== "ok").length < 2) trouble(calm[Math.floor(Math.random() * calm.length)]); nextTrouble = 3 + Math.random() * 3; }
+      // tech movement
+      if (tech.path.length) {
+        const [c, r] = tech.path[0]; const p = P(c, r); const dx = p.x - tech.x, dy = p.y - tech.y; const dist = Math.hypot(dx, dy); const sp = Math.max(160, W * .38) * dt;
+        if (dist <= sp) { tech.x = p.x; tech.y = p.y; tech.c = c; tech.r = r; tech.path.shift(); if (!tech.path.length && tech.target) arrive(); }
+        else { tech.x += dx / dist * sp; tech.y += dy / dist * sp; }
+        tech.trail.push([tech.x, tech.y]); if (tech.trail.length > 14) tech.trail.shift();
+      } else if (tech.trail.length) tech.trail.shift();
+      DEVICES.forEach(d => { if (d.state === "fixing") { d.fixT += dt / 1.1; if (d.fixT >= 1) finish(d); } });
+      // packets
+      if (Math.random() < dt * 5 && packets.length < 26) spawnPacket();
+      for (let k = packets.length - 1; k >= 0; k--) { const pk = packets[k]; pk.x += pk.vx * dt; pk.y += pk.vy * dt; pk.life -= dt; if (pk.life <= 0) packets.splice(k, 1); }
+      draw(now);
+    }
+    requestAnimationFrame(step);
+  }
+
+  size(); addEventListener("resize", size);
+  if ("IntersectionObserver" in window) new IntersectionObserver(es => { visible = es[0].isIntersecting; }).observe(cv);
+  // seed the log so the first frame tells the story
+  log("Owner's laptop: Pop-up virus", false); log("Backups: Restore test due", false);
+  fixed = 2; $("#fixCount").textContent = fixed;
+  if (reduceMotion) { draw(0); return; }
+  requestAnimationFrame(t => { last = t; step(t); });
+})();
+</script>
+</body>
+</html>
