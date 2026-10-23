@@ -12,7 +12,7 @@
 <meta property="og:title" content="G Street iT | We're looking for trouble">
 <meta property="og:description" content="Small business and personal IT solutions from real people in Avilla, IN. Serving Fort Wayne and Chicagoland. Remote support never outsourced.">
 <meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#0b1013">
+<meta name="theme-color" content="#07111c">
 <link rel="icon" href="assets/gstreet-seal.webp">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","additionalType":"https://en.wikipedia.org/wiki/Managed_services","name":"G Street iT","alternateName":"G Street iT Solutions","slogan":"We're looking for trouble!","url":"https://gstreetit.com/","logo":"https://gstreetit.com/assets/gstreet-seal.webp","description":"Managed IT, networking, cybersecurity and computer repair for small businesses and homes. Remote support from the USA, never outsourced.","address":{"@type":"PostalAddress","streetAddress":"142 S Main St","addressLocality":"Avilla","addressRegion":"IN","postalCode":"46710","addressCountry":"US"},"areaServed":[{"@type":"City","name":"Avilla, IN"},{"@type":"City","name":"Auburn, IN"},{"@type":"City","name":"Kendallville, IN"},{"@type":"City","name":"Fort Wayne, IN"},{"@type":"Place","name":"Chicagoland"}],"parentOrganization":{"@type":"Organization","name":"G Street Portal","url":"https://www.gstreetportal.com/"},"knowsAbout":["Managed IT services","Network installation","Cybersecurity","Computer repair","Microsoft 365","Data backup"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,16 +21,16 @@
 /* Layout: the G Street family's dark stage (same type system as gstreetdjs.com) re-tuned for IT.
    Hero = copy left, live "Trouble Patrol" street map right. Blue-grey = brand & actions; green = healthy; red = trouble. */
 :root{
-  --stage:#0b1013;          /* near-black with a cool bias */
-  --deck:#121a1e;           /* raised surfaces */
-  --deck-2:#19232a;
-  --line:#24323a;
+  --stage:#07111c;          /* near-black with a cool bias */
+  --deck:#0b1b2d;           /* raised surfaces */
+  --deck-2:#0f2440;
+  --line:#16324f;
   --ink:#f3f5f7;
   --ink-2:#a7b4bb;
   --ink-3:#72828a;
-  --accent:#607d8b;         /* G Street iT blue-grey, the theme color from the original Google Sites page */
-  --accent-2:#6f8fa0;       /* button hover */
-  --accent-hi:#9db8c6;      /* light tint for accent text on dark */
+  --accent:#0073E6;         /* G Street iT blue (palette #003366 #004080 #0059B3 #0073E6) */
+  --accent-2:#0059B3;       /* button hover */
+  --accent-hi:#0073E6;      /* light tint for accent text on dark */
   --accent-ink:#ffffff;     /* text on accent buttons */
   --ok:#3ddc97;             /* healthy / fixed */
   --data:#5cc8ff;           /* network traffic */
@@ -69,7 +69,7 @@ p{margin:0}
 /* Buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;border:1px solid transparent;font-family:var(--f-label);font-size:1rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s,border-color .2s,color .2s;white-space:nowrap;background:none}
 .btn-hot{background:var(--accent);color:var(--accent-ink);font-weight:600}
-.btn-hot:hover{background:var(--accent-2);transform:translateY(-2px);box-shadow:0 10px 30px -8px rgba(157,184,198,.6)}
+.btn-hot:hover{background:var(--accent-2);transform:translateY(-2px);box-shadow:0 10px 30px -8px rgba(0,115,230,.6)}
 .btn-ghost{border-color:var(--line);color:var(--ink)}
 .btn-ghost:hover{border-color:var(--accent);color:var(--accent-hi);transform:translateY(-2px)}
 .btn svg{width:18px;height:18px;flex:none}
@@ -88,7 +88,7 @@ p{margin:0}
 @media (max-width:640px){.portal-bar .wrap{justify-content:center}.portal-bar{letter-spacing:.04em;font-size:.66rem}.portal-bar nav{gap:10px}}
 
 /* Nav */
-.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(11,16,19,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(7,17,28,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
 .nav.scrolled{border-color:var(--line)}
 .nav .wrap{display:flex;align-items:center;gap:20px;height:72px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto}
@@ -118,7 +118,7 @@ p{margin:0}
 /* Hero */
 .hero{position:relative;overflow:hidden;padding-block:clamp(40px,6vw,80px) clamp(48px,7vw,96px)}
 .hero::before{content:"";position:absolute;inset:0;background:
-  radial-gradient(600px 400px at 78% 40%,rgba(111,146,163,.13),transparent 70%),
+  radial-gradient(600px 400px at 78% 40%,rgba(0,89,179,.13),transparent 70%),
   radial-gradient(500px 360px at 10% 90%,rgba(92,200,255,.07),transparent 70%);pointer-events:none}
 .hero-grid{position:relative;display:grid;grid-template-columns:1.02fr 1fr;gap:clamp(28px,4vw,56px);align-items:center}
 @media (max-width:980px){.hero-grid{grid-template-columns:1fr}}
@@ -156,7 +156,7 @@ p{margin:0}
 @keyframes rowin{from{opacity:0;transform:translateY(4px)}}
 @media (max-width:560px){.p-url{display:none}}
 @media (max-width:400px){.brand small{display:none}}
-.patrol-hint{position:absolute;right:12px;top:56px;font-family:var(--f-label);text-transform:uppercase;letter-spacing:.12em;font-size:.66rem;color:var(--ink-3);background:rgba(11,16,19,.7);padding:4px 10px;border-radius:999px;border:1px solid var(--line);pointer-events:none}
+.patrol-hint{position:absolute;right:12px;top:56px;font-family:var(--f-label);text-transform:uppercase;letter-spacing:.12em;font-size:.66rem;color:var(--ink-3);background:rgba(7,17,28,.7);padding:4px 10px;border-radius:999px;border:1px solid var(--line);pointer-events:none}
 .patrol-foot{display:flex;justify-content:space-between;gap:12px;padding:10px 16px;border-top:1px solid var(--line);font-family:var(--f-label);text-transform:uppercase;letter-spacing:.12em;font-size:.7rem;color:var(--ink-3)}
 .patrol-foot b{color:var(--ink);font-family:var(--f-mono);font-weight:500;letter-spacing:0;font-variant-numeric:tabular-nums}
 
@@ -199,10 +199,10 @@ p{margin:0}
 @media (max-width:980px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:620px){.svc-grid{grid-template-columns:1fr}}
 .svc{position:relative;display:grid;gap:12px;align-content:start;padding:26px 24px;border:1px solid var(--line);border-radius:var(--r);background:var(--deck);overflow:hidden;transition:border-color .3s,transform .3s;animation:svcin .45s ease both}
-.svc::before{content:"";position:absolute;inset:0;background:radial-gradient(260px 180px at var(--mx,50%) var(--my,0%),rgba(111,146,163,.14),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}
+.svc::before{content:"";position:absolute;inset:0;background:radial-gradient(260px 180px at var(--mx,50%) var(--my,0%),rgba(0,89,179,.14),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}
 .svc:hover{border-color:#34444d;transform:translateY(-3px)}
 .svc:hover::before{opacity:1}
-.svc .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(111,146,163,.1);color:var(--accent-hi)}
+.svc .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(0,89,179,.1);color:var(--accent-hi)}
 .svc .ico svg{width:22px;height:22px}
 .svc p{color:var(--ink-2);font-size:.97rem}
 .svc ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
@@ -250,7 +250,7 @@ p{margin:0}
 @media (max-width:1240px){.plans{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:620px){.plans{grid-template-columns:1fr}}
 .plan{position:relative;min-width:0;display:flex;flex-direction:column;gap:16px;padding:28px 24px;border:1px solid var(--line);border-radius:18px;background:var(--deck)}
-.plan.feat{border-color:var(--accent);background:linear-gradient(180deg,rgba(111,146,163,.08),var(--deck) 40%)}
+.plan.feat{border-color:var(--accent);background:linear-gradient(180deg,rgba(0,89,179,.08),var(--deck) 40%)}
 .plan .badge{position:absolute;top:-12px;left:24px;background:var(--accent);color:var(--accent-ink);font-family:var(--f-label);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;padding:4px 12px;border-radius:999px;font-weight:600}
 .plan .for{font-family:var(--f-label);text-transform:uppercase;letter-spacing:.14em;font-size:.74rem;color:var(--ink-3)}
 .plan .price{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
@@ -309,7 +309,7 @@ form.card{border:1px solid var(--line);border-radius:20px;background:var(--deck)
 .field label,.field legend{font-family:var(--f-label);text-transform:uppercase;letter-spacing:.12em;font-size:.76rem;color:var(--ink-2);padding:0}
 .field input,.field select,.field textarea{width:100%;min-height:48px;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--stage);transition:border-color .2s,box-shadow .2s}
 .field textarea{min-height:110px;resize:vertical}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(111,146,163,.18)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,89,179,.18)}
 .field.bad input,.field.bad select,.field.bad textarea{border-color:var(--bad)}
 .field .err{color:var(--bad);font-size:.82rem;min-height:0}
 fieldset{border:0;margin:0;padding:0;min-width:0}
@@ -318,7 +318,7 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
 .field .chip{text-transform:none;letter-spacing:0;font-family:var(--f-body);font-size:inherit;color:inherit}
 .chip input{position:absolute;opacity:0;pointer-events:none}
 .chip span{display:inline-flex;align-items:center;min-height:38px;padding:0 14px;border-radius:999px;border:1px solid var(--line);font-size:.9rem;color:var(--ink-2);cursor:pointer;transition:all .2s;background:var(--stage)}
-.chip input:checked+span{background:rgba(111,146,163,.14);border-color:var(--accent);color:var(--ink)}
+.chip input:checked+span{background:rgba(0,89,179,.14);border-color:var(--accent);color:var(--ink)}
 .chip input:focus-visible+span{outline:2px solid var(--accent-hi);outline-offset:2px}
 .urg .chip input:checked+span[data-u="2"]{background:rgba(255,93,77,.15);border-color:var(--bad)}
 .form-foot{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;justify-content:space-between}
@@ -346,7 +346,7 @@ footer ul a:hover{color:var(--accent-hi)}
 .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:36px;padding-top:20px;border-top:1px solid var(--line);color:var(--ink-3);font-size:.85rem}
 
 /* Mobile dock + toast */
-.dock{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:linear-gradient(transparent,rgba(11,16,19,.95) 40%);display:none;transform:translateY(110%);transition:transform .35s}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:linear-gradient(transparent,rgba(7,17,28,.95) 40%);display:none;transform:translateY(110%);transition:transform .35s}
 .dock.show{transform:none}
 .dock .btn{width:100%}
 @media (max-width:760px){.dock{display:block}}
@@ -538,17 +538,17 @@ footer ul a:hover{color:var(--accent-hi)}
         <defs><filter id="glow"><feGaussianBlur stdDeviation="3"/></filter></defs>
         <!-- Roughly to geography: Chicago northwest; Avilla north of Fort Wayne -->
         <path d="M60 50 C 150 40, 230 120, 320 105 S 405 105, 430 112 L 455 198" fill="none" stroke="#24323a" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M60 50 C 150 40, 230 120, 320 105 S 405 105, 430 112 L 455 198" fill="none" stroke="#9db8c6" stroke-width="2.5" stroke-dasharray="10 9" stroke-linecap="round" stroke-linejoin="round"><animate attributeName="stroke-dashoffset" from="0" to="-38" dur="1.4s" repeatCount="indefinite"/></path>
+        <path d="M60 50 C 150 40, 230 120, 320 105 S 405 105, 430 112 L 455 198" fill="none" stroke="#0073E6" stroke-width="2.5" stroke-dasharray="10 9" stroke-linecap="round" stroke-linejoin="round"><animate attributeName="stroke-dashoffset" from="0" to="-38" dur="1.4s" repeatCount="indefinite"/></path>
         <circle cx="60" cy="50" r="16" fill="#3ddc97" opacity=".18"/><circle cx="60" cy="50" r="6" fill="#3ddc97"/>
         <text x="40" y="26" fill="#aab2bc" font-family="Oswald,Arial Narrow,sans-serif" font-size="14" text-anchor="start" letter-spacing="2">CHICAGOLAND</text>
         <circle cx="455" cy="198" r="6" fill="#3ddc97"/>
         <text x="455" y="234" fill="#aab2bc" font-family="Oswald,Arial Narrow,sans-serif" font-size="14" text-anchor="middle" letter-spacing="2">FORT WAYNE</text>
-        <circle cx="430" cy="112" r="22" fill="#9db8c6" opacity=".18" filter="url(#glow)"><animate attributeName="r" values="14;26;14" dur="2.4s" repeatCount="indefinite"/></circle>
-        <circle cx="430" cy="112" r="8" fill="#9db8c6"/>
+        <circle cx="430" cy="112" r="22" fill="#0073E6" opacity=".18" filter="url(#glow)"><animate attributeName="r" values="14;26;14" dur="2.4s" repeatCount="indefinite"/></circle>
+        <circle cx="430" cy="112" r="8" fill="#0073E6"/>
         <text x="430" y="75" fill="#f3f5f7" font-family="Unbounded,Arial Black,sans-serif" font-size="13" font-weight="700" text-anchor="middle">AVILLA HQ</text>
         <text x="430" y="90" fill="#737c87" font-family="JetBrains Mono,monospace" font-size="10" text-anchor="middle">142 S MAIN ST</text>
       </svg>
-      <div class="legend"><span><i style="background:#9db8c6"></i>Headquarters</span><span><i style="background:#3ddc97"></i>On-site service areas</span><span><i style="background:#9db8c6;width:18px;height:2px;border-radius:0"></i>Remote support, anywhere</span></div>
+      <div class="legend"><span><i style="background:#0073E6"></i>Headquarters</span><span><i style="background:#3ddc97"></i>On-site service areas</span><span><i style="background:#0073E6;width:18px;height:2px;border-radius:0"></i>Remote support, anywhere</span></div>
     </div>
   </div>
 </section>
@@ -888,7 +888,7 @@ if (!reduceMotion && "IntersectionObserver" in window) {
 (() => {
   const cv = $("#patrolCanvas"), ctx = cv.getContext("2d");
   const COLS = 6, ROWS = 4;
-  const C = { road: "#1c262c", lane: "#9db8c6", ok: "#3ddc97", bad: "#ff5d4d", data: "#5cc8ff", ink: "#f3f5f7", ink3: "#737c87", block: "#111a1f" };
+  const C = { road: "#1c262c", lane: "#0073E6", ok: "#3ddc97", bad: "#ff5d4d", data: "#5cc8ff", ink: "#f3f5f7", ink3: "#737c87", block: "#111a1f" };
   const DEVICES = [
     { c:0, r:0, name:"Front desk PC", ic:"pc", issues:["Running slow","Blue screen","Won't boot"] },
     { c:2, r:0, name:"Wi-Fi", ic:"wifi", issues:["Dead zone in back office","Dropping connections"] },
@@ -1000,7 +1000,7 @@ if (!reduceMotion && "IntersectionObserver" in window) {
     });
     // tech trail + dot
     tech.trail.forEach((q, k) => { ctx.fillStyle = C.lane; ctx.globalAlpha = k / tech.trail.length * .35; ctx.beginPath(); ctx.arc(q[0], q[1], 4, 0, 7); ctx.fill(); }); ctx.globalAlpha = 1;
-    const g = ctx.createRadialGradient(tech.x, tech.y, 0, tech.x, tech.y, 22); g.addColorStop(0, "rgba(157,184,198,.55)"); g.addColorStop(1, "rgba(157,184,198,0)");
+    const g = ctx.createRadialGradient(tech.x, tech.y, 0, tech.x, tech.y, 22); g.addColorStop(0, "rgba(0,115,230,.55)"); g.addColorStop(1, "rgba(0,115,230,0)");
     ctx.fillStyle = g; ctx.beginPath(); ctx.arc(tech.x, tech.y, 22, 0, 7); ctx.fill();
     ctx.fillStyle = C.lane; ctx.beginPath(); ctx.arc(tech.x, tech.y, 7, 0, 7); ctx.fill();
     ctx.fillStyle = "#0b1013"; ctx.font = "700 8px Unbounded, sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText("G", tech.x, tech.y + .5); ctx.textAlign = "start"; ctx.textBaseline = "alphabetic";
