@@ -548,7 +548,7 @@ footer ul a:hover{color:var(--accent-hi)}
         <text x="430" y="75" fill="#f3f5f7" font-family="Unbounded,Arial Black,sans-serif" font-size="13" font-weight="700" text-anchor="middle">AVILLA HQ</text>
         <text x="430" y="90" fill="#737c87" font-family="JetBrains Mono,monospace" font-size="10" text-anchor="middle">142 S MAIN ST</text>
       </svg>
-      <div class="legend"><span><i style="background:#0073E6"></i>Headquarters</span><span><i style="background:#3ddc97"></i>On-site service areas</span><span><i style="background:#0073E6;width:18px;height:2px;border-radius:0"></i>Remote support, anywhere</span></div>
+      <div class="legend"><span><i style="background:#0073E6"></i>Headquarters</span><span><i style="background:#3ddc97"></i>On-site service areas</span><span><i style="background:#0073E6;width:18px;height:2px;border-radius:0"></i>Travel between service areas</span><span><i style="background:#5cb3ff;box-shadow:0 0 0 3px rgba(92,179,255,.28)"></i>Remote support, anywhere</span></div>
     </div>
   </div>
 </section>
@@ -580,7 +580,7 @@ footer ul a:hover{color:var(--accent-hi)}
     }
   }
   function land(s){
-    var c=s.col==='#ffffff'?'#9fd2ff':s.col;
+    var c='#5cb3ff';
     marks.push({t:0,dot:el('circle',{cx:s.x,cy:s.y,r:2.4,fill:c}),ring:el('circle',{cx:s.x,cy:s.y,r:2,fill:'none',stroke:c,'stroke-width':1.2,opacity:.8})});
   }
   function step(now){
